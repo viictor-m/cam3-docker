@@ -66,6 +66,8 @@ download () {
             awk '{print $1}' |\
             awk 'NR==2')
         $path/gdrive download $ID --skip --path $path/src/$1
+        tar -zxvf "$path/src/$i" -C "$path/src/"
+        rm $path/src/$i
     done
     echo "todas as dependências foram baixadas."
 }
